@@ -1,0 +1,75 @@
+body{margin:0px;}
+a{color:#000;text-decoration:none;}
+a:hover{text-decoration:underline;}
+/* Newsroom header styling */
+.header{
+    font-size: 2em;
+    font-family: Arial,sans-serif;
+}
+/* widget container */
+.widgetContainer{overflow:hidden;}
+/* Making the article container a flexbox */
+.row{
+    display:flex;
+    /* Hiding the margin on the left and right */
+    margin:0px -10px;
+}
+/* Changing the orientation to vertical on mobile */
+@media screen and (max-width: 480px) {
+    .row {
+        flex-direction:column;
+    }
+}
+/* Containing element for the article content */
+.article{
+    display:inline-block;
+    flex-basis: 0;
+    flex-grow:1;
+    box-sizing: border-box;
+}
+/* Changing the styling on the link */
+.link{
+    display:block;
+    /* Adding spacing between articles */
+    margin: 10px;
+}
+/* Container element for image */
+.imageContainer{
+    display:block;
+    width: 100%;
+    /* Controls height of image. Percentage is relative to width, i.e. 100% is square */
+    padding-top: 100%;
+    position: relative;
+    margin-bottom:10px;    
+}
+/* Changing aspect ratio of image on mobile */
+@media screen and (max-width: 480px) {
+    .imageContainer {
+        padding-top: 50%;
+    }
+}
+/* Styling for image itself to be cropped */
+.img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+/* Styling for caption */
+.title{
+    /* This cuts off the caption at three lines with ... added */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow:hidden;
+    font-family: Arial,sans-serif;
+    font-size: 1em;
+}
+/* PressPatron label */
+.ppLabel{
+    font-size: x-small;
+    text-align: right; 
+    font-family: Arial,sans-serif;    
+}
